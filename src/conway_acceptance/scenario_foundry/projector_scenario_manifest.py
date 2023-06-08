@@ -27,7 +27,7 @@ class ProjectorScenarioManifest(ScenarioManifest):
     def get_data_hubs(self):
         '''
         Returns an list of conway.database.data_hub.DataHub objects that define all the DataHubs
-        that need to be set up for the test database specific by this Foundry_ScenarioManifest instance.
+        that need to be set up for the test database specific by this ProjectorScenarioManifest instance.
         '''
         
         input_db_hub                         = Projector_DataHub(name       = TestStatics.PROJECTOR_INPUT_DB_FOLDER,
@@ -35,11 +35,6 @@ class ProjectorScenarioManifest(ScenarioManifest):
                                                                                         self.path_to_actuals(), 
                                                                                         TestStatics.PROJECTOR_INPUT_DB_FOLDER))
 
-        seed_db_hub                           = Projector_DataHub(name      = TestStatics.PROJECTOR_SEED_DB_FOLDER,
-                                                                  hub_handle = RelativeDataHubHandle(
-                                                                                        self.path_to_actuals(), 
-                                                                                        TestStatics.PROJECTOR_SEED_DB_FOLDER))
-
-        return [input_db_hub, seed_db_hub]
+        return [input_db_hub]
     
     

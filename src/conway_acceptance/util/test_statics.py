@@ -38,6 +38,5 @@ class TestStatics():
     # When testing the projector, we need to simulate input, output, and seed db's. We use this statics to 
     # to define their roots in VM_ProjectorTestContext
     #
-    PROJECTOR_INPUT_DB_FOLDER                   = "projector_input_db"
-    PROJECTOR_OUTPUT_DB_FOLDER                  = "projector_output_db"
-    PROJECTOR_SEED_DB_FOLDER                    = "projector_seed_db"
+    PROJECTOR_INPUT_DB_FOLDER                                   = "projector_input_db"
+    PROJECTOR_OUTPUT_DB_FOLDER                                  = "projector_output_db"
