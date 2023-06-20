@@ -14,10 +14,9 @@ class ProjectorTestDatabase(TestDatabase):
         '''
         super().__init__(manifest)
 
-        [input_db_hub, seed_db_hub]                                 = manifest.get_data_hubs()
+        [input_db_hub]                                              = manifest.get_data_hubs()
 
         self.input_db_hub                                           = input_db_hub
-        self.seed_db_hub                                            = seed_db_hub
     
     def populate_from_seed(self):
         '''
@@ -29,11 +28,6 @@ class ProjectorTestDatabase(TestDatabase):
                                                             name        = TestStatics.PROJECTOR_INPUT_DB_FOLDER,
                                                             hub_handle  = RelativeDataHubHandle(seed_folder, 
                                                                                                 TestStatics.PROJECTOR_INPUT_DB_FOLDER)))
-        
-        self.seed_db_hub.populate_from_seed(Projector_DataHub(
-                                                            name        = TestStatics.PROJECTOR_SEED_DB_FOLDER, 
-                                                            hub_handle  = RelativeDataHubHandle(seed_folder, 
-                                                                                                TestStatics.PROJECTOR_SEED_DB_FOLDER)))
 
 
     def enrich_from_seed(self, seeding_round):
@@ -58,10 +52,5 @@ class ProjectorTestDatabase(TestDatabase):
                                                             hub_handle  = RelativeDataHubHandle(seed_folder, 
                                                                                                 TestStatics.PROJECTOR_INPUT_DB_FOLDER)))
         
-        self.seed_db_hub.enrich_from_seed(Projector_DataHub(
-                                                            name        = TestStatics.PROJECTOR_SEED_DB_FOLDER, 
-                                                            hub_handle  = RelativeDataHubHandle(seed_folder, 
-                                                                                                TestStatics.PROJECTOR_SEED_DB_FOLDER)))
-
 
         
